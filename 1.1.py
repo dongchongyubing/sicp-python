@@ -24,7 +24,7 @@ def average(x, y):
 def is_good_enough(guess, x):
     return abs(square(guess) - x) < 0.001
 
-def sqrt(x):
+def square_root(x):
     return sqrt_iter(1.0, x)
 
 ######################################################################
@@ -63,3 +63,23 @@ def sqrt3(x):
             return sqrt_iter(improve(guess))
 
     return sqrt_iter(1.0)
+
+
+######################################################################
+
+def p():
+    return p()
+
+def test(x, y):
+    return 0 if x == 0 else y
+
+test(0, p())
+
+# test(0, functools.partial(p))
+
+################################################################################
+
+from operator import add, sub
+
+def a_plus_abs_b(a, b):
+    return (add if b > 0 else sub)(a, b)
