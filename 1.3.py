@@ -8,10 +8,16 @@ def sum_cubes(a, b):
     return 0 if a > b else cube(a) + sum_cubes(a + 1, b)
 
 def pi_sum(a, b):
-    return 0 if a > b else (1.0 / (a * (a + 2))) + pi_sum(a + 4, b)
+    if a > b:
+        return 0
+    else:
+        return (1.0 / (a * (a + 2))) + pi_sum(a + 4, b)
 
 def mysum(term, a, next_term, b):
-    return 0 if a > b else term(a) + mysum(term, next_term(a), next_term, b)
+    if a > b:
+        return 0
+    else:
+        return term(a) + mysum(term, next_term(a), next_term, b)
 
 def inc(n): return n + 1
 
